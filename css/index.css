@@ -80,12 +80,12 @@ body {
 
 /**search bar**/
 .input-group {
-  width: 50px;
+  width: 500px;
 }
 
 .jumbotron{
-    height: 60px;
-    width: 50%;
+    height: 600px;
+    width: 100%;
     background: url(img/homepage_girl.jpg);
     background-size: cover;
 }
