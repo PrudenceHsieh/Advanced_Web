@@ -1,3 +1,33 @@
+<?php
+
+$contentFile = "content.json";
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+  try
+  {
+  $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_URL);
+
+    # Load content from JSON file
+    if(is_readable($contentFile))  
+      $videoData = file_get_contents($contentFile);
+    else                           
+      throw new Exception("Cannot load content!");
+
+  }
+  catch(Exception $e)
+  {
+    header('HTTP/1.1 400 Bad request'); 
+    echo $e->getMessage();
+  }
+
+}
+
+# decode JSON file 
+  $JSONcontents = json_decode($videoData);
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
