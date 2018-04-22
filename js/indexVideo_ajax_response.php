@@ -20,10 +20,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     echo $e->getMessage();
   }
 
+  # decode JSON file 
+  $JSONcontents = json_decode($videoData);
+
 }
 
-# decode JSON file 
-  $JSONcontents = json_decode($videoData);
+
   
   for($i=0; $i<8; $i++) { 
     $videoContent = $JSONcontents[$i];
@@ -62,6 +64,7 @@ echo <<<STRING
                 </div>
             </div>
       </div>
+    </div>
 
 
 STRING;

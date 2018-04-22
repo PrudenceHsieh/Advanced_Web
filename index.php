@@ -20,10 +20,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     echo $e->getMessage();
   }
 
+  # decode JSON file 
+  $JSONcontents = json_decode($videoData);
+
 }
 
-# decode JSON file 
-  $JSONcontents = json_decode($videoData);
+
   
 ?>
 
@@ -56,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
   <!--Our Style-->
   <link rel="stylesheet" type="text/css" href="css/index.css">
-  <script type="text/javascript" src="js/index_ajax.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
